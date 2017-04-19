@@ -197,8 +197,8 @@ a:hover, a:active {
 }
 .sidebar .logo-title .title h3 {
   padding-top:10px;
-  text-transform: uppercase;
-  font-size: 2rem;
+  /*text-transform: uppercase;*/
+  font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 2px;
   line-height: 1;
