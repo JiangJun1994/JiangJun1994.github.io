@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Ben Wong,wenbinben@gmail.com"><title> · Jiang Jun</title><meta name="description" content="title:flex 布局what is flexFlex 是 Flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。任何一个容器都可以指定为 Flex 布局,但是用了flex布局之后，子元素的float， clear， vertical-align 属性都将失效。
+1"><meta name="keywords" content="Hexo,HTML,Ben,CSS,安卓,android,Linux,linuxdeepin"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">Jiang Jun</a></h3><div class="description"><p>天道酬勤</p></div></div></div><ul class="social-links"><li><a href="https://twitter.com/Ben_wenbin"><i class="fa fa-twitter"></i></a></li><li><a href="http://instagram.com/hwbinbenben"><i class="fa fa-instagram"></i></a></li><li><a href="/atom.xml"><i class="fa fa-rss"></i></a></li><li><a href="http://weibo.com/ben0036"><i class="fa fa-weibo"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai</a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img src="https://secure.gravatar.com/avatar/e71df8021446fe9759a9928b1dd5c28d?s=180&amp;r=G&amp;d="></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a></a></h3></div><div class="post-content"><hr>
+<h2 id="title-flex-布局"><a href="#title-flex-布局" class="headerlink" title="title:flex 布局"></a>title:flex 布局</h2><h2 id="what-is-flex"><a href="#what-is-flex" class="headerlink" title="what is flex"></a>what is flex</h2><p>Flex 是 Flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。<br>任何一个容器都可以指定为 Flex 布局,但是用了flex布局之后，子元素的float， clear， vertical-align 属性都将失效。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//块级元素</div><div class="line"> .container&#123;</div><div class="line">    display:flex;</div><div class="line"> &#125;</div><div class="line">//行内元素</div><div class="line">.container&#123;</div><div class="line">    display:inline-flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="basic-concept"><a href="#basic-concept" class="headerlink" title="basic concept"></a>basic concept</h2><p>采用flex 布局的元素称为容器，它的所有子元素为容器成员，称为项目（单个项目占据的主轴空间是main size；交叉轴空间是cross size）。<br>容器默认存在两根轴：<br>    水平的主轴（main axis, 项目默认按照主轴排列<br>        开始位置：main start; 结束位置：main end<br>    垂直的交叉轴(cross axis)<br>        开始位置：cross start; 结束位置：cross end</p>
+<h2 id="properties-of-container"><a href="#properties-of-container" class="headerlink" title="properties of container"></a>properties of container</h2><ol>
+<li>flex-direction 决定主轴的方向<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    flex-direction:row | row-reverse | column | column-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>row: 主轴为水平方向，起点在左边；<br>row-reverse: 主轴为水平方向，起点在右边；<br>column：主轴为垂直方向，起点在上边；<br>column-reverse： 主轴为垂直方向，起点在下边；</p>
+<ol>
+<li>flex-wrap  决定换行<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    flex-direction:wrap | nowrap | wrap-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>nowrap: 默认不换行；<br>wrap: 换行，第一行在上边；<br>wrap-reverse: 换行，第一行在下边；</p>
+<ol>
+<li><p>flex-flow 是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;&#125;;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>justify-content 定义了项目在主轴上的对齐方式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    justify-content: flex-start | flex-end | center | space-between | space-around;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>flex-start（默认值）：左对齐<br>flex-end：右对齐<br>center： 居中<br>space-between：两端对齐，项目之间的间隔都相等。<br>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</p>
+<ol>
+<li>align-items 定义项目在交叉轴上如何对齐<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    align-items: flex-start | flex-end | center | baseline | stretch;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>flex-start：交叉轴的起点对齐。<br>flex-end：交叉轴的终点对齐。<br>center：交叉轴的中点对齐。<br>baseline: 项目的第一行文字的基线对齐。<br>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</p>
+<ol>
+<li>align-content 定义了多根轴线的对齐方式<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    align-content: flex-start | flex-end | center | space-between | space-around | stretch;   &#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>flex-start：与交叉轴的起点对齐。<br>flex-end：与交叉轴的终点对齐。<br>center：与交叉轴的中点对齐。<br>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。<br>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。<br>stretch（默认值）：轴线占满整个交叉轴。</p>
+<h2 id="properties-of-items"><a href="#properties-of-items" class="headerlink" title="properties of items"></a>properties of items</h2><ol>
+<li><p>order  定义项目的排列顺序。数值越小，排列越靠前，默认为0</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item&#123;</div><div class="line">    order: &lt;<span class="built_in">integer</span>&gt;;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>flex-grow 定义项目的放大比例，默认为0，0即如果存在剩余空间，也不放大</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item&#123;</div><div class="line">    flex-grow: &lt;number&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。<br>如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
+<ol>
+<li>flex-shrink  定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item&#123;</div><div class="line">flex-shrink: &lt;number&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。<br>如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。</p>
+<ol>
+<li><p>flex-basis  定义了在分配多余空间之前，项目占据的主轴空间</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  flex-basis: &lt;length&gt; | auto; /* default auto */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>flex<br>flex 是flex grow， flex shrink， flex basis 的缩写，默认值为0，1，auto</p>
+</li>
+<li><p>align-self 允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性</p>
+</li>
+</ol>
+<p>默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  align-self:auto | flex-start | flex-end | center | baseline | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2017-06-02</span><i class="fa fa-tag"></i></div></div></div></div><div class="share"><div class="evernote"> <a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"> <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"> <a href="http://twitter.com/home?status=,http://yoursite.com/2017/06/02/flex/,Jiang Jun,,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/2017/04/26/blog/" title="react + node.js + mysql 搭建的个人小博客" class="btn">上一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
